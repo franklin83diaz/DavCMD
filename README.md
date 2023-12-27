@@ -38,12 +38,17 @@ Para comenzar a usar DavCMD, puedes utilizar los siguientes comandos:
 
 ### Subir un archivo al servidor WebDAV
 ```
-davcmd upload /path/to/local/file.ext /path/to/remote/directory/
+davcmd -t /path/to/local/file.ext /path/to/remote/directory/
+```
+
+### Subir un archivo recursivo al servidor WebDAV
+```
+davcmd -r -t /path/to/local/file.ext /path/to/remote/directory/
 ```
 
 ### Descargar un archivo del servidor WebDAV
 ```
-davcmd download /path/to/remote/file.ext /path/to/local/directory/
+davcmd -d /path/to/remote/file.ext /path/to/local/directory/
 ```
 
 # Listar archivos en el directorio remoto
@@ -57,9 +62,14 @@ davcmd list /path/to/remote/directory/
 url = https://example.com/webdav/
 username = your_username
 password = your_password
-Contribuciones
+
+[personal]
+url = https://example.com/webdav/
+username = your_username
+password = your_password
 
 ```
+## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, envía tus pull requests al repositorio principal.
 
