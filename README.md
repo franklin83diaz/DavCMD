@@ -51,12 +51,17 @@ davcmd -r -t /path/to/local/file.ext /path/to/remote/directory/
 davcmd -d /path/to/remote/file.ext /path/to/local/directory/
 ```
 
-# Listar archivos en el directorio remoto
+### Listar archivos en el directorio remoto
 ```
 davcmd list /path/to/remote/directory/
 ```
+### Expecificar server
+davcmd -d -u your_username -p your_password -s https://example.com/webdav/ /path/to/remote/file.ext /path/to/local/directory/
 
-#Config ~/.davcmd.ini
+### Expecificar Perfil de .davcmd
+davcmd -d -P personal /path/to/remote/file.ext /path/to/local/directory/
+
+### Config ~/.davcmd
 ```
 [default]
 url = https://example.com/webdav/
