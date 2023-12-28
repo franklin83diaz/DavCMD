@@ -8,7 +8,7 @@ import (
 )
 
 var username string
-var password string
+var password string = "null"
 var url string
 var directory bool
 var zip bool
@@ -34,7 +34,6 @@ func init() {
 	rootCmd.PersistentFlags().BoolVarP(&zip, "zip", "z", false, "zip the directory before uploading")
 
 	rootCmd.MarkPersistentFlagRequired("username")
-	rootCmd.MarkPersistentFlagRequired("password")
 	rootCmd.MarkPersistentFlagRequired("url")
 
 	//commands
