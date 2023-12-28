@@ -16,7 +16,7 @@ var uploadCmd = &cobra.Command{
 				webdav.UploadZip(url, args[0], args[1], username, password)
 			}
 		} else {
-			webdav.Upload(url, args[0], args[1], username, password)
+			webdav.Upload(url, args[0], args[1], username, password, zip)
 		}
 	},
 }

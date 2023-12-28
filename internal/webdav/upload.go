@@ -2,12 +2,23 @@ package webdav
 
 import (
 	"crypto/tls"
+	"devcmd/internal/pkg"
 	"fmt"
 	"net/http"
 	"os"
 )
 
-func Upload(url string, filePath string, rFilePath string, username string, password string) {
+func Upload(url string, filePath string, rFilePath string, username string, password string, zip bool) {
+
+	if zip {
+
+		// Create a zip file
+		filePath, err := pkg.ZipFile(filePath, rFilePath)
+		if err != nil {
+			panic(err)
+		}
+		defer os.Remove(filePath)
+	}
 
 	// Open the file you want to upload
 	file, err := os.Open(filePath)
