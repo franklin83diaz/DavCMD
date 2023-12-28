@@ -39,6 +39,7 @@ func init() {
 
 	//commands
 	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(uploadCmd)
 }
 
 func Execute() {
