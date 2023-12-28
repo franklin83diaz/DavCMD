@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func UploadZip(url string, folderPath string, rFilePath string, username string, password string) {
+func UploadFolderZip(url string, folderPath string, rFilePath string, username string, password string) {
 
 	// Create a zip file
 	filePath, err := pkg.ZipFolder(folderPath, rFilePath)
@@ -54,6 +54,9 @@ func UploadZip(url string, folderPath string, rFilePath string, username string,
 	// set basic auth
 	req.SetBasicAuth(username, password)
 
+	//msg
+	fmt.Println("Uploading file...")
+
 	// Do request
 	resp, err := client.Do(req)
 	if err != nil {
@@ -63,9 +66,9 @@ func UploadZip(url string, folderPath string, rFilePath string, username string,
 	defer resp.Body.Close()
 
 	if resp.StatusCode == 201 {
-		fmt.Println("zip file uploaded")
+		fmt.Println("zip Folder uploaded")
 	} else {
-		fmt.Println("zip file not uploaded")
+		fmt.Println("\033[31m", "zip Folder not uploaded", "\033[0m")
 	}
 
 }

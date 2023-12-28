@@ -2,6 +2,7 @@ package pkg
 
 import (
 	"archive/zip"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
@@ -9,6 +10,9 @@ import (
 
 // ZipFolder Compresses a specified folder and all its subfolders into a zip file.
 func ZipFolder(source, target string) (string, error) {
+
+	//msg
+	fmt.Println("Compressing Folder...")
 
 	zipfile, err := os.CreateTemp("", target+"-davcmd-*.zip")
 
@@ -68,6 +72,9 @@ func ZipFolder(source, target string) (string, error) {
 // ZipFile Compresses a specified file into a zip file.
 func ZipFile(source, target string) (string, error) {
 
+	//msg
+	fmt.Println("Compressing file...")
+
 	zipfile, err := os.CreateTemp("", target+"-davcmd-*.zip")
 
 	if err != nil {
@@ -95,11 +102,11 @@ func ZipFile(source, target string) (string, error) {
 		return "", err
 	}
 
-	// Make sure the file path in the zip file maintains the folder structure
-	header.Name, err = filepath.Rel(filepath.Dir(source), source)
-	if err != nil {
-		return "", err
-	}
+	// // Make sure the file path in the zip file maintains the folder structure
+	// header.Name, err = filepath.Rel(filepath.Dir(source), source)
+	// if err != nil {
+	// 	return "", err
+	// }
 
 	header.Method = zip.Deflate
 

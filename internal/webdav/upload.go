@@ -51,6 +51,8 @@ func Upload(url string, filePath string, rFilePath string, username string, pass
 	// set basic auth
 	req.SetBasicAuth(username, password)
 
+	//msg
+	fmt.Println("Uploading file...")
 	// Do request
 	resp, err := client.Do(req)
 	if err != nil {
@@ -60,9 +62,18 @@ func Upload(url string, filePath string, rFilePath string, username string, pass
 	defer resp.Body.Close()
 
 	if resp.StatusCode == 201 {
-		fmt.Println("file uploaded")
+		if zip {
+			fmt.Println("zip file uploaded")
+		} else {
+			fmt.Println("file uploaded")
+		}
 	} else {
-		fmt.Println("file not uploaded")
+		if zip {
+			fmt.Println("\033[31m", "zip file not uploaded", "\033[0m")
+		} else {
+
+			fmt.Println("\033[31m", "file not uploaded", "\033[0m")
+		}
 	}
 
 	// body, err := io.ReadAll(resp.Body)
