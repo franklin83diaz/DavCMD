@@ -1,65 +1,65 @@
-# DavCMD
+#DavCMD
 
-DavCMD es un cliente de línea de comandos ligero y potente diseñado para interactuar con servidores WebDAV. Permite a los usuarios subir, descargar y subir archivos en un servidor WebDAV de manera eficiente y automatizada.
+DavCMD is a lightweight and powerful command line client designed to interact with WebDAV servers. It allows users to upload, download, and upload files to a WebDAV server in an efficient and automated manner.
 
-### Características
+### Characteristics
 
-Subir archivos: Envía archivos desde tu sistema local al servidor WebDAV.
-Descargar archivos: Recupera archivos del servidor WebDAV a tu sistema local.
-Interfaz de línea de comandos: Facilita la integración con scripts y automatizaciones.
-Requisitos previos
-Sistema operativo compatible (Windows, macOS, Linux).
-Acceso a un servidor WebDAV.
+Upload files: Send files from your local system to the WebDAV server.
+Download files: Recover files from the WebDAV server to your local system.
+Command line interface: Facilitates integration with scripts and automations.
+Previous requirements
+Compatible operating system (Windows, macOS, Linux).
+Access to a WebDAV server.
 
-## Instalación
+## Facility
 
-### Clonar el repositorio (reemplazar con la URL del repositorio real)
+### Clone the repository (replace with the actual repository URL)
 ```
 git clone https://github.com/yourusername/DavCMD.git
 ```
 
-### Cambiar al directorio del proyecto
+### Change to the project directory
 ```
 cd DavCMD
 ```
 
-### Ejecutar el script de instalación (si es aplicable)
+### Run the installation script (if applicable)
 ```
 go build -o davcmd main.go
 ```
 
-Uso
-Para comenzar a usar DavCMD, puedes utilizar los siguientes comandos:
+Use
+To start using DavCMD, you can use the following commands:
 
-### Subir un archivo al servidor WebDAV
+### Upload a file to the WebDAV server
 ```
 davcmd upload -u 5A8iKe53Ta1QnVr -l http://storage.adaptivecomputing.com/public.php/webdav/ test test
 ```
 
-### Subir un archivo recursivo al servidor WebDAV
+### Upload a recursive file to the WebDAV server
 ```
 peding...
 ```
 
-### Descargar un archivo del servidor WebDAV
+### Download a file from the WebDAV server
 ```
 davcmd download -u 5A8i -l https://s.com/index.php/s/7czpKX2VYuNG test
 ```
 
-### Listar archivos en el directorio remoto
+### List files in remote directory
 ```
 davcmd list /path/to/remote/directory/
 ```
-### Expecificar server
+### Specify server
 davcmd -d -u your_username -p your_password -s https://example.com/webdav/ /path/to/remote/file.ext /path/to/local/directory/
 
-### Expecificar Perfil de .davcmd
+### Specify Profile from .davcmd
 davcmd -d -P personal /path/to/remote/file.ext /path/to/local/directory/
 
 
-## Contribuciones
+## Contributions
 
-Las contribuciones son bienvenidas. Por favor, envía tus pull requests al repositorio principal.
+Contributions are welcome. Please submit your pull requests to the main repository.
 
-Licencia
-DavCMD está licenciado bajo la MIT License.
+License
+DavCMD is licensed under the MIT License.
